@@ -1,0 +1,74 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="nav" id="myTopnav">
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">Project</a></li>
+            <li><a href="">Gallery</a></li>
+            <li><a href="">Blog</a></li>
+            <li><a href="">Inventory</a></li>
+        </ul>
+    </div>
+    <br>
+    <div class="bio">
+        <img src="user.png" alt="">
+        <div class="detail1">
+            <h2 id="name">Nama anda</h2>
+            <p id="p1">Frontend</p>
+            <button id="kontak">Kontak</button>
+            <button id="resume">Resume</button>
+        </div>
+        <div class="general">
+            <div class="detail2">
+                <p>Availability </p>
+                <p>Usia </p>
+                <p>Lokasi</p>
+                <p>Pengalaman</p>
+                <p>Email </p>
+            </div>
+            <div class="detail3">
+                <p id="ava"> Full-time </p>
+                <p id="age"> 20 </p>
+                <p id="loc"> Jakarta</p>
+                <p id="expe"> 2 </p>
+                <p id="email1"> email@gmail.com</p>
+            </div>
+        </div>
+        <br>
+    </div>
+    <br>
+    <form>
+        <label for="nama">Nama</label><br>
+        <input type="text" placeholder="masukan nama anda" id="nama"><br>
+        <label for="role">Role</label><br>
+        <input type="text" id="role"><br>
+        <label for="avai">Availability</label><br>
+        <select id="avai">
+            <option value="">Pilih</option>
+            <option value="Full-time">Full-time</option>
+            <option value="Part-time">Part-time</option>
+        </select>
+        <br>
+        <label for="usia">Usia</label><br>
+        <input type="number" id="usia"><br>
+        <label for="lokasi">Lokasi</label><br>
+        <input type="text" id="lokasi"><br>
+        <label for="tahun">Years Experience</label><br>
+        <input type="number" id="tahun"><br>
+        <label for="email">Email</label><br>
+        <input type="email" id="email"><br><br>
+        <input type="button" id="submit" value="SUBMIT" onclick="tekan()">
+    </form>
+    <script src="script.js"></script>
+</body>
+
+</html>
