@@ -1,3 +1,7 @@
+function press() {
+    document.getElementById("show").style.display = "block";
+}
+
 function tekan() {
     var namestr = (document.getElementById("nama").value);
     document.getElementById("name").innerHTML = namestr;
