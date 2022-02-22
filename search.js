@@ -1,4 +1,4 @@
-var book = [
+var books = [
     "filosofi teras",
     "madilog",
     "the intelligent investor",
@@ -8,11 +8,11 @@ var book = [
 
 function show(text) {
     document.getElementById("recomend").innerHTML = " ";
-    book.forEach(trying);
+    books.forEach(book);
 }
 
-function trying(assess) {
-    if (assess.match(document.getElementById("typein").value)) {
-        document.getElementById("recomend").innerHTML += "<br>" + assess;
+function book(list) {
+    if (list.match(document.getElementById("typein").value)) {
+        document.getElementById("recomend").innerHTML += "<br>" + list;
     }
 }
