@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\product;
+use Illuminate\Support\Facades\Validator;
 
 class ProductController extends Controller
 {
@@ -19,19 +20,20 @@ class ProductController extends Controller
        $product->description= $request->description;
        $product->save();
        return "Data Berhasil Masuk";
-    }
 
+    }
+    public function show($id)
+    {
+        $produk = product::find($id);
+        return $produk;
+    }
     public function update(Request $request, $id)
     {
-        $nama = $request->nama;
-        $price = $request->price;
-        $description= $request->description;
-
         $product = product::find($id);
         $product->nama = $request->nama;
         $product->price = $request->price;
         $product->description= $request->description;
-        $product->save();
+        $product->update();
         return "Data Berhasil di Update";
       
     }
