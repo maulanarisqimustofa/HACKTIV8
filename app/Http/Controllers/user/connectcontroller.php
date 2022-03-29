@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers\user;
-use App\Models\contact;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -14,8 +13,7 @@ class connectcontroller extends Controller
      */
     public function index()
     {
-        $data_contact = contact::all();
-        return view('user.page.connect.tampil', ['DataContact' => $data_contact]);
+        return view('user.page.connect.tampil');
     }
 
     /**

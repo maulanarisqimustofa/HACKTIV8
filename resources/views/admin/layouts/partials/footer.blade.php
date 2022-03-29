@@ -1,3 +1,3 @@
 <footer class="main-footer">
-   HAIMAULANA
+   YOURLOGO
   </footer>

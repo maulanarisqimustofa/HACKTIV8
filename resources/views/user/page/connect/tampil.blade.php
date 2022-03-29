@@ -9,17 +9,15 @@
 
         <div class="section-title">
             <h2>Contact</h2>
-            @foreach($DataContact as $key => $contact)
-            <p>{{ $contact->content}}</p>
-            @endforeach
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi officiis nam eum delectus numquam aliquam quibusdam repellat unde sunt dolores et illo maxime nostrum sapiente praesentium aperiam ratione, perspiciatis ipsam.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus molestias doloremque, voluptatibus debitis delectus cumque eos, asperiores, iusto perspiciatis expedita quis a illo quae quaerat voluptate voluptatem numquam? Iste, obcaecati.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam, qui sint! Harum perferendis tempore debitis? Aliquid quae nemo ipsa perferendis incidunt dolores quas animi ullam iure doloribus. Eveniet, dolorem incidunt.
+            </p>
         </div>
         <div>
         </div>
     </div>
 </section><!-- End Contact Section -->
-<br>
-<br>
-<br>
 <br>
 <br>
 @endsection

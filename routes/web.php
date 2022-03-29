@@ -12,116 +12,92 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Http\Controllers\user\indexcontroller;
+Route::get('/', [indexcontroller::class,'index']);
+
+use App\Http\Controllers\user\productcontroller;
+Route::get('/product', [productcontroller::class,'index'])
+->name('user.product');
+
+Route::get('/product.{id}', [productcontroller::class,'show']);
+
+use App\Http\Controllers\user\categorycontroller;
+Route::get('/category', [categorycontroller::class,'index'])
+->name('user.category');
+
+use App\Http\Controllers\user\connectcontroller;
+Route::get('/connect', [connectcontroller::class,'index'])
+->name('user.connect');
+
+use App\Http\Controllers\user\aboutuscontroller;
+Route::get('/aboutus', [aboutuscontroller::class,'index'])
+->name('user.aboutus');
 
 use App\Http\Controllers\Auth\LoginController;
 
 Route::get('/login', [LoginController::class,'index'])->name('login');
 Route::post('/login', [LoginController::class,'login']);
 
-use App\Http\Controllers\Admin\ProfilController;
+use App\Http\Controllers\admin\profilcontroller;
 Route::middleware('auth')->group(function () {
-    Route::get('/profil', [ProfilController::class,'index'])
+    Route::get('/profil', [profilcontroller::class,'index'])
     ->name('admin.profil');
 });
 
-Route::get('/profil.{id}.edit', [ProfilController::class,'edit']);
+Route::get('/profil.{id}.edit', [profilcontroller::class,'edit']);
 
-Route::put('/profil.{id}', [ProfilController::class,'update']);
+Route::put('/profil.{id}', [profilcontroller::class,'update']);
 
 Route::post('/logout', [LoginController::class,'logout']);
 Route::get('/logout', [LoginController::class,'logout']);
 
-use App\Http\Controllers\Admin\AboutController;
-Route::get('/about', [AboutController::class,'index'])
-->name('admin.about');
+use App\Http\Controllers\admin\kategoricontroller;
+Route::get('/kategori', [kategoricontroller::class,'index'])
+->name('admin.kategori');
 
-Route::get('/about.{id}.edit', [AboutController::class,'edit']);
+Route::get('/kategori.cari', [kategoricontroller::class,'search']);
 
-Route::put('/about.{id}', [AboutController::class,'update']);
+Route::get('/kategori.tambah', [kategoricontroller::class,'create']);
 
-use App\Http\Controllers\Admin\WorkController;
-Route::get('/work', [WorkController::class,'index'])
-->name('admin.work');
+Route::post('/kategori', [kategoricontroller::class,'store']);
 
-Route::get('/work.cari', [WorkController::class,'search']);
+Route::get('/kategori.{id}.edit', [kategoricontroller::class,'edit']);
 
-Route::get('/work.tambah', [WorkController::class,'create']);
+Route::put('/kategori.{id}', [kategoricontroller::class,'update']);
 
-Route::post('/work', [WorkController::class,'store']);
+Route::delete('/kategori.{id}', [kategoricontroller::class,'destroy']);
 
-Route::get('/work.{id}.edit', [WorkController::class,'edit']);
+use App\Http\Controllers\admin\produkcontroller;
+Route::get('/produk', [produkcontroller::class,'index'])
+->name('admin.produk');
 
-Route::put('/work.{id}', [WorkController::class,'update']);
+Route::get('/produk.cari', [produkcontroller::class,'search']);
 
-Route::delete('/work.{id}', [WorkController::class,'destroy']);
+Route::get('/produk.tambah', [produkcontroller::class,'create']);
 
-use App\Http\Controllers\Admin\ContactController;
-Route::get('/contact', [ContactController::class,'index'])
-->name('admin.contact');
+Route::post('/produk', [produkcontroller::class,'store']);
 
-Route::get('/contact.{id}.edit', [ContactController::class,'edit']);
+Route::get('/produk.{id}.edit', [produkcontroller::class,'edit']);
 
-Route::put('/contact.{id}', [ContactController::class,'update']);
+Route::put('/produk.{id}', [produkcontroller::class,'update']);
 
-use App\Http\Controllers\Admin\AbilityController;
-Route::get('/ability', [AbilityController::class,'index'])
-->name('admin.ability');
+Route::delete('/produk.{id}', [produkcontroller::class,'destroy']);
 
-Route::get('/ability.cari', [AbilityController::class,'search']);
+use App\Http\Controllers\admin\produk1controller;
+Route::get('/produk.massupload', [produk1controller::class,'create']);
 
-Route::get('/ability.tambah', [AbilityController::class,'create']);
+Route::post('/produk1', [produk1controller::class,'store']);
 
-Route::post('/ability', [AbilityController::class,'store']);
+use App\Http\Controllers\admin\ordercontroller;
+Route::get('/order', [ordercontroller::class,'index'])
+->name('admin.order');
 
-Route::get('/ability.{id}.edit', [AbilityController::class,'edit']);
+Route::get('/order.cari', [ordercontroller::class,'search']);
 
-Route::put('/ability.{id}', [AbilityController::class,'update']);
+Route::get('/order.tambah', [ordercontroller::class,'create']);
 
-Route::delete('/ability.{id}', [AbilityController::class,'destroy']);
+Route::delete('/order.{id}', [ordercontroller::class,'destroy']);
 
-use App\Http\Controllers\Admin\PortfolioController;
-Route::get('/portfolio', [PortfolioController::class,'index'])
-->name('admin.portfolio');
+use App\Http\Controllers\admin\dashboardcontroller;
+Route::get('/dashboard', [dashboardcontroller::class,'index'])->name('admin.dashboard');
 
-Route::get('/portfolio.cari', [PortfolioController::class,'search']);
-
-Route::get('/portfolio.tambah', [PortfolioController::class,'create']);
-
-Route::post('/portfolio', [PortfolioController::class,'store']);
-
-Route::get('/portfolio.{id}.edit', [PortfolioController::class,'edit']);
-
-Route::put('/portfolio.{id}', [PortfolioController::class,'update']);
-
-Route::delete('/portfolio.{id}', [PortfolioController::class,'destroy']);
-
-use App\Http\Controllers\Admin\LabsController;
-Route::get('/labs', [LabsController::class,'index'])
-->name('admin.labs');
-
-Route::get('/labs.cari', [LabsController::class,'search']);
-
-Route::get('/labs.tambah', [LabsController::class,'create']);
-
-Route::post('/labs', [LabsController::class,'store']);
-
-Route::get('/labs.{id}.edit', [LabsController::class,'edit']);
-
-Route::put('/labs.{id}', [LabsController::class,'update']);
-
-Route::get('/labs.{id}', [LabsController::class,'show']);
-
-Route::delete('/labs.{id}', [LabsController::class,'destroy']);
-
-use App\Http\Controllers\user\IndexController;
-Route::get('/', [IndexController::class,'index']);
-
-use App\Http\Controllers\user\WorksController;
-Route::get('/works', [WorksController::class,'index'])
-->name('user.works');
-
-Route::get('/works.{id}', [WorksController::class,'show']);
-
-use App\Http\Controllers\user\ConnectController;
-Route::get('/connect', [ConnectController::class,'index'])
-->name('user.connect');

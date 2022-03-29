@@ -3,7 +3,7 @@
     <!-- Brand Logo -->
     <a href="{{url('/profil')}}" class="brand-link">
      
-      <span class="brand-text font-weight-light">HAIMAULANA</span>
+      <span class="brand-text font-weight-light">YOURLOGO</span>
     </a>
 
     <!-- Sidebar -->
@@ -21,59 +21,39 @@
               </p>
             </a>
           </li>
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-database"></i>
+          <li class="nav-item">
+            <a href="{{url('/dashboard')}}" class="nav-link">
+              <i class="nav-icon fas fa-home"></i>
               <p>
-                Information
-                <i class="fas fa-angle-left right"></i>
+                Dashboard
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{url('/about')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>About</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{url('/work')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Work</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{url('/contact')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Contact</p>
-                </a>
-              </li>
-            </ul>
           </li>
           <li class="nav-item">
-            <a href="{{url('/ability')}}" class="nav-link">
+            <a href="{{url('/kategori')}}" class="nav-link">
               <i class="nav-icon fas fa-list"></i>
               <p>
-                Ability
+                Kategori
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{url('/portfolio')}}" class="nav-link">
+            <a href="{{url('/produk')}}" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
               <p>
-                Portfolio
+                Produk
               </p>
             </a>
           </li> <li class="nav-item">
           <li class="nav-item">
-            <a href="{{url('/labs')}}" class="nav-link">
-              <i class="nav-icon fas fa-newspaper"></i>
+            <a href="{{url('/order')}}" class="nav-link">
+              <i class="nav-icon fas fa-file"></i>
               <p>
-                Labs
+                Report
               </p>
             </a>
           </li> <li class="nav-item">
+          <li class="nav-item">
              <a onclick="event.preventDefault();    
              document.getElementById('logout').submit()" 
              class="nav-link">

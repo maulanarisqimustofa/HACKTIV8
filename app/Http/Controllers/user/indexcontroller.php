@@ -3,7 +3,8 @@
 namespace App\Http\Controllers\user;
 
 use App\Http\Controllers\Controller;
-use App\Models\about;
+use App\Models\produk;
+use App\Models\kategori;
 use Illuminate\Http\Request;
 
 class indexcontroller extends Controller
@@ -15,8 +16,9 @@ class indexcontroller extends Controller
      */
     public function index()
     {
-        $data_about = about::all();
-        return view('tampil', ['DataAbout' => $data_about]);
+        $data_produk = produk::orderby('id_produk', 'desc')->paginate(3);
+        $data_kategori = kategori::all();
+        return view('tampil', ['DataProduk' => $data_produk], ['DataKategori' => $data_kategori]);
     }
 
     /**
