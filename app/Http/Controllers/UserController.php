@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\users;
+use App\Models\user;
 
 class UserController extends Controller
 {
@@ -15,7 +15,7 @@ class UserController extends Controller
     public function index()
     {
         $batas = 3;
-        $data_user = users::orderBy('id', 'DESC')->paginate($batas);
+        $data_user = user::orderBy('id', 'DESC')->paginate($batas);
         $no = ($batas * ($data_user->currentpage() - 1)) + 1;
         return view(
             'user.tampil',
@@ -41,7 +41,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $user = new users;
+        $user = new user;
         $user->nama = $request->nama;
         $user->email = $request->email;
         $user->save();
@@ -67,7 +67,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user = users::find($id);
+        $user = user::find($id);
         return view('user.edit', ['user' => $user]);
     }
 
@@ -80,7 +80,7 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        users::where('id', $id)
+        user::where('id', $id)
             ->update(['nama' => $request->nama, 'email' => $request->email]);
         return redirect('/user');
     }
@@ -93,7 +93,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        $user = users::find($id);
+        $user = user::find($id);
         $user->delete();
         return redirect('/user');
     }
