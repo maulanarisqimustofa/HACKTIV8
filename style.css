@@ -1,0 +1,56 @@
+body {
+    background: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    padding-left: 10%;
+}
+
+.header {
+    padding: 10px;
+}
+
+.header h2 {
+    text-align: center;
+}
+
+#col1 {
+    height: fit-content;
+}
+
+.content {
+    background: orange;
+}
+
+.content a {
+    color: white;
+}
+
+.content a:hover {
+    color: blue;
+}
+
+.card-body {
+    background: white;
+    margin-bottom: 20px;
+}
+
+.card img {
+    height: 400px;
+    object-fit: cover;
+}
+
+.p1 {
+    text-align: right;
+    font-size: 15px;
+    padding-right: 10px;
+}
+
+.p2 {
+    font-weight: bold;
+}
+
+#detail {
+    display: none;
+}
